@@ -1,13 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Templates (Frameset)</title>
+    <title>Invoice Templates</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+        .app {
+            display: flex;
+            height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+        .list-panel {
+            width: 340px;
+            flex-shrink: 0;
+            overflow-y: auto;
+            border-right: 1px solid #e2e8f0;
+            background: #f8fafc;
+            transition: width 0.22s ease, opacity 0.22s ease, border-width 0.22s ease;
+        }
+        .app.template-open .list-panel {
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            border-right-width: 0;
+            pointer-events: none;
+        }
+        .list-inner {
+            padding: 16px 14px;
+            width: 340px;
+        }
+        .app.template-open .list-inner {
+            visibility: hidden;
+        }
+        h1 {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 0 0 12px;
+            color: #64748b;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 12px;
+        }
+        a.card-link { text-decoration: none; }
+        .card {
+            display: block;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+            transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(2,6,23,0.12);
+            border-color: #93c5fd;
+        }
+        .thumb {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: #f8fafc;
+        }
+        .thumb iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 720px;
+            height: 980px;
+            border: 0;
+            transform: scale(0.28);
+            transform-origin: top left;
+            pointer-events: none;
+            user-select: none;
+        }
+        .meta {
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .name {
+            font-weight: 800;
+            color: #0f172a;
+            font-size: 13px;
+        }
+        .badge {
+            font-size: 12px;
+            font-weight: 800;
+            color: #1d4ed8;
+            background: #dbeafe;
+            padding: 4px 8px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .hint {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.35;
+            margin-top: 12px;
+        }
+        .preview-panel {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            background: #e2e8f0;
+            position: relative;
+        }
+        .preview-toolbar {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            flex-shrink: 0;
+        }
+        .app.template-open .preview-toolbar {
+            display: flex;
+        }
+        .back-btn {
+            font: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            color: #1d4ed8;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+        .back-btn:active {
+            transform: scale(0.98);
+        }
+        .preview-frame {
+            flex: 1;
+            width: 100%;
+            border: 0;
+            min-height: 0;
+            background: #fff;
+        }
+    </style>
 </head>
-<!-- Frameset layout: list (left) + preview (right) -->
-<frameset cols="340,*" frameborder="0" border="0" framespacing="0">
-    <frame src="templates-list.html" name="templateList" noresize scrolling="auto" />
-    <frame src="temple1/index.html" name="templatePreview" scrolling="auto" />
-</frameset>
+<body>
+    <div class="app" id="app">
+        <aside class="list-panel" id="listPanel" aria-label="Lista de templates">
+            <div class="list-inner">
+                <h1>Templates</h1>
+                <div class="cards">
+                    <a class="card-link" href="temple1/index.html" data-template><div class="card"><div class="thumb"><iframe src="temple1/index.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 1</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple2/templet2.html" data-template><div class="card"><div class="thumb"><iframe src="temple2/templet2.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 2</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple3/temple3.html" data-template><div class="card"><div class="thumb"><iframe src="temple3/temple3.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 3</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple4/teplet4.html" data-template><div class="card"><div class="thumb"><iframe src="temple4/teplet4.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 4</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple5/templet5.html" data-template><div class="card"><div class="thumb"><iframe src="temple5/templet5.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 5</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple6/templet6.html" data-template><div class="card"><div class="thumb"><iframe src="temple6/templet6.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 6</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple7/templet7.html" data-template><div class="card"><div class="thumb"><iframe src="temple7/templet7.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 7</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple8/templet8.html" data-template><div class="card"><div class="thumb"><iframe src="temple8/templet8.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 8</span><span class="badge">Ver</span></div></div></a>
+                    <a class="card-link" href="temple9/templet9.html" data-template><div class="card"><div class="thumb"><iframe src="temple9/templet9.html" title="" loading="lazy" aria-hidden="true"></iframe></div><div class="meta"><span class="name">Temple 9</span><span class="badge">Ver</span></div></div></a>
+                </div>
+                <p class="hint">Toque num template para ver em ecrã cheio. Use «Templates» para voltar à lista.</p>
+            </div>
+        </aside>
+        <main class="preview-panel">
+            <div class="preview-toolbar">
+                <button type="button" class="back-btn" id="backBtn" aria-controls="listPanel">← Templates</button>
+            </div>
+            <iframe class="preview-frame" id="preview" title="Pré-visualização do template" src="temple1/index.html"></iframe>
+        </main>
+    </div>
+    <script>
+        (function () {
+            var app = document.getElementById('app');
+            var preview = document.getElementById('preview');
+            var backBtn = document.getElementById('backBtn');
+
+            function openTemplate(url) {
+                preview.src = url;
+                app.classList.add('template-open');
+            }
+
+            document.querySelectorAll('a[data-template]').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openTemplate(this.getAttribute('href'));
+                });
+            });
+
+            backBtn.addEventListener('click', function () {
+                app.classList.remove('template-open');
+            });
+        })();
+    </script>
+</body>
 </html>
