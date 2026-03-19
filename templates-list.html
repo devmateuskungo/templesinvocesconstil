@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates List</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+        .wrap {
+            padding: 16px 14px;
+        }
+        h1 {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 0 0 12px;
+            color: #64748b;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 12px;
+        }
+        a { text-decoration: none; }
+        .card {
+            display: block;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+            transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(2,6,23,0.12);
+            border-color: #93c5fd;
+        }
+        .thumb {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: #f8fafc;
+        }
+        .thumb iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 720px;
+            height: 980px;
+            border: 0;
+            transform: scale(0.28);
+            transform-origin: top left;
+            pointer-events: none;
+            user-select: none;
+        }
+        .meta {
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .name {
+            font-weight: 800;
+            color: #0f172a;
+            font-size: 13px;
+        }
+        .badge {
+            font-size: 12px;
+            font-weight: 800;
+            color: #1d4ed8;
+            background: #dbeafe;
+            padding: 4px 8px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .hint {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.35;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Templates</h1>
+
+        <div class="cards">
+            <a class="card" href="temple1/index.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple1/index.html" title="Temple 1 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 1</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple2/templet2.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple2/templet2.html" title="Temple 2 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 2</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple3/temple3.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple3/temple3.html" title="Temple 3 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 3</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple4/teplet4.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple4/teplet4.html" title="Temple 4 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 4</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple5/templet5.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple5/templet5.html" title="Temple 5 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 5</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple6/templet6.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple6/templet6.html" title="Temple 6 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 6</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple7/templet7.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple7/templet7.html" title="Temple 7 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 7</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple8/templet8.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple8/templet8.html" title="Temple 8 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 8</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+
+            <a class="card" href="temple9/templet9.html" target="templatePreview">
+                <div class="thumb">
+                    <iframe src="temple9/templet9.html" title="Temple 9 preview" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+                <div class="meta">
+                    <span class="name">Temple 9</span>
+                    <span class="badge">View</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="hint">
+            Click em qualquer thumbnail para abrir o template no painel ao lado.
+        </div>
+    </div>
+</body>
+</html>
+

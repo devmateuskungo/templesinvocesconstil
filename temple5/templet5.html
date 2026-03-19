@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Ícones Lucide para os símbolos de Check, User e Building -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .text-invoice-blue { color: #2983FF; }
+        .bg-invoice-blue { background-color: #2983FF; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <!-- Container Principal (Folha A4 aproximada) -->
+    <div class="max-w-5xl mx-auto bg-white rounded-[3rem] shadow-2xl p-8 md:p-16 border border-gray-50">
+        
+        <!-- HEADER -->
+        <header class="flex flex-col md:flex-row justify-between items-start mb-12">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+                <div>
+                    <h1 class="text-6xl font-extrabold text-slate-800 tracking-tight">CONSTIL</h1>
+                    <p class="text-slate-400 mt-2 font-medium">CONSTIL / 12345 6789 US0001</p>
+                </div>
+                <!-- Divisor Vertical -->
+                <div class="hidden md:block h-20 w-[2px] bg-slate-100"></div>
+                <div class="flex flex-col gap-3">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Invoice number:</p>
+                        <p class="font-bold text-slate-700 text-lg">INV-1027</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Issued:</p>
+                        <p class="font-bold text-slate-700 text-lg">Mar 19, 2026</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid de Pontos Coloridos (Logo) -->
+            <div class="grid grid-cols-3 gap-2 mt-6 md:mt-2">
+                <div class="w-4 h-4 rounded-full bg-transparent"></div>
+                <div class="w-4 h-4 rounded-full bg-transparent"></div>
+                <div class="w-4 h-4 rounded-full bg-[#FF3B30]"></div>
+                
+                <div class="w-4 h-4 rounded-full bg-transparent"></div>
+                <div class="w-4 h-4 rounded-full bg-[#C65D8D]"></div>
+                <div class="w-4 h-4 rounded-full bg-[#E03E52]"></div>
+                
+                <div class="w-4 h-4 rounded-full bg-[#4285F4]"></div>
+                <div class="w-4 h-4 rounded-full bg-[#5E5CE6]"></div>
+                <div class="w-4 h-4 rounded-full bg-[#7D52B5]"></div>
+            </div>
+        </header>
+
+        <!-- SEÇÃO DE TRÊS COLUNAS (INFO CARDS) -->
+        <div class="bg-white border border-slate-100 rounded-[2.5rem] p-6 shadow-sm mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Bill To -->
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="bg-blue-500 rounded-full p-0.5"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">Bill To:</span>
+                    </div>
+                    <div class="bg-slate-50/50 border border-slate-100 rounded-3xl p-6 flex-grow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="user" class="w-4 h-4 text-blue-500"></i>
+                            <h3 class="font-bold text-slate-800">Client: Olivia Thompson</h3>
+                        </div>
+                        <div class="space-y-1 text-xs text-slate-400 font-medium leading-relaxed">
+                            <p>Email: olivia.thompson@example.com</p>
+                            <p>Phone: +1 (212) 555-0147</p>
+                            <p>Address: 788 5th Ave, New York, NY 10022, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bill From -->
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="bg-blue-500 rounded-full p-0.5"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">Bill From:</span>
+                    </div>
+                    <div class="bg-slate-50/50 border border-slate-100 rounded-3xl p-6 flex-grow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="building-2" class="w-4 h-4 text-blue-500"></i>
+                            <h3 class="font-bold text-slate-800">Company: CONSTIL Bright Pixel Studio LLC</h3>
+                        </div>
+                        <div class="space-y-1 text-xs text-slate-400 font-medium leading-relaxed">
+                            <p>Email: billing@brightpixelstudio.com</p>
+                            <p>Phone: +1 (415) 555-0198</p>
+                            <p>Address: 245 Market St, San Francisco, CA 94105, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amount Due (O Card Azul) -->
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="bg-blue-500 rounded-full p-0.5"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">PAYMENT TERMS</span>
+                    </div>
+                    <div class="bg-invoice-blue rounded-3xl p-8 flex-col justify-center text-white shadow-lg shadow-blue-200 h-full">
+                        <p class="text-xs font-bold opacity-80 mb-2 uppercase tracking-widest">PAYMENT TERMS</p>
+                        <h2 class="text-4xl font-extrabold mb-2 tracking-tight">Net 15</h2>
+                        <p class="text-sm font-bold opacity-90">Due by Sep 15, 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABELA DE ITENS -->
+        <div class="bg-white border border-slate-100 rounded-[2.5rem] p-8 shadow-sm mb-10">
+            <div class="grid grid-cols-12 px-6 mb-6 text-[11px] font-bold text-slate-300 tracking-widest uppercase">
+                <div class="col-span-4">ITEM</div>
+                <div class="col-span-1 text-center">QTY</div>
+                <div class="col-span-2 text-center">UNIT PRICE</div>
+                <div class="col-span-1 text-center">DISCOUNT</div>
+                <div class="col-span-1 text-center">TAX</div>
+                <div class="col-span-3 text-right">TOTAL</div>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Linhas Estilo Pill -->
+                <div class="grid grid-cols-12 px-6 py-4 items-start bg-white border border-slate-100 rounded-md">
+                    <div class="col-span-4 font-bold text-slate-700 text-sm">
+                        Website redesign package
+                        <span class="block mt-1 text-xs font-normal text-slate-400 leading-relaxed">Complete visual refresh and responsive layout updates.</span>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$4,500.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$4,500.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 px-6 py-4 items-start bg-white border border-slate-100 rounded-md">
+                    <div class="col-span-4 font-bold text-slate-700 text-sm">
+                        Brand style guide
+                        <span class="block mt-1 text-xs font-normal text-slate-400 leading-relaxed">Typography, color palette, and logo usage rules.</span>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$1,850.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$1,850.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 px-6 py-4 items-start bg-white border border-slate-100 rounded-md">
+                    <div class="col-span-4 font-bold text-slate-700 text-sm">
+                        UI/UX mobile app prototype
+                        <span class="block mt-1 text-xs font-normal text-slate-400 leading-relaxed">Interactive screens for onboarding and dashboard flows.</span>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$1,200.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$1,200.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 px-6 py-4 items-start bg-white border border-slate-100 rounded-md">
+                    <div class="col-span-4 font-bold text-slate-700 text-sm">
+                        SEO setup and optimization
+                        <span class="block mt-1 text-xs font-normal text-slate-400 leading-relaxed">Metadata, headings, and technical SEO baseline setup.</span>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$650.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$650.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 px-6 py-4 items-start bg-white border border-slate-100 rounded-md">
+                    <div class="col-span-4 font-bold text-slate-700 text-sm">
+                        Performance optimization
+                        <span class="block mt-1 text-xs font-normal text-slate-400 leading-relaxed">Image compression and speed improvements for core pages.</span>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$250.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$250.00</div>
+                </div>
+            </div>
+
+            <!-- TOTAL FINAL -->
+            <div class="mt-12 text-right px-6 space-y-2">
+                <p class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">SUBTOTAL: <span class="text-slate-800">$8,450.00</span></p>
+                <p class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">TOTAL DISCOUNT: <span class="text-slate-800">$0.00</span></p>
+                <p class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">TOTAL TAX: <span class="text-slate-800">$0.00</span></p>
+                <p class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">TOTAL: <span class="text-slate-800">$8,450.00</span></p>
+            </div>
+        </div>
+
+        <!-- TERMOS -->
+        <div class="px-6">
+            <p class="font-bold text-slate-400 text-xs mb-2">Terms & Conditions:</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed max-w-4xl">
+                Fees and payment terms are set in the agreement. Initial deposit required before work begins. Work may be paused for non-payment.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Inicializa os ícones do Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>

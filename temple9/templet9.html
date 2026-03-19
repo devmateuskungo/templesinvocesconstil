@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .bg-invoice-blue { background-color: #2983FF; }
+        .text-invoice-blue { color: #2983FF; }
+    </style>
+</head>
+<body class="p-0 md:p-10 flex justify-center">
+
+    <!-- Container Principal (Folha) -->
+    <div class="max-w-5xl w-full bg-white shadow-2xl overflow-hidden md:rounded-[3rem]">
+        
+        <!-- HEADER AZUL -->
+        <header class="bg-invoice-blue p-10 md:p-16 pb-24 md:pb-32 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+                
+                <!-- Título e Logo -->
+                <div class="md:col-span-5 space-y-6">
+                    <div class="space-y-1">
+                        <h1 class="text-6xl font-extrabold tracking-tight">CONSTIL</h1>
+                        <p class="text-lg font-medium opacity-90">INVOICE NUMBER: <span class="font-bold">INV-1027</span></p>
+                        <p class="text-lg font-medium opacity-90">INVOICE DATE: <span class="font-bold">Mar 19, 2026</span></p>
+                    </div>
+
+                    
+                </div>
+
+                <!-- Info CONSTIL (Bill From) -->
+                <div class="md:col-span-3 space-y-2">
+                    <h3 class="font-bold text-lg mb-4">Company: CONSTIL Bright Pixel Studio LLC</h3>
+                    <div class="text-sm opacity-80 space-y-1 font-medium">
+                        <p>Email: billing@brightpixelstudio.com</p>
+                        <p>Phone: +1 (415) 555-0198</p>
+                        <p>Address: 245 Market St, San Francisco, CA 94105, USA</p>
+                    </div>
+                </div>
+
+                <!-- Info Olivia Thompson (Bill To) -->
+                <div class="md:col-span-4 space-y-2">
+                    <h3 class="font-bold text-lg mb-4">Client: Olivia Thompson</h3>
+                    <div class="text-sm opacity-80 space-y-1 font-medium">
+                        <p>Email: olivia.thompson@example.com</p>
+                        <p>Phone: +1 (212) 555-0147</p>
+                        <p>Address: 788 5th Ave, New York, NY 10022, USA</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CORPO BRANCO (Com curva para cima) -->
+        <main class="bg-white -mt-16 md:-mt-20 rounded-t-[4rem] p-10 md:p-20 relative z-10">
+            
+            <!-- Tabela de Itens -->
+            <div class="border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm mb-12">
+            <!-- Header Tabela -->
+            <div class="grid grid-cols-12 bg-slate-50/50 px-8 py-5 text-[11px] font-bold text-slate-400 tracking-widest uppercase">
+                <div class="col-span-4">ITEM</div>
+                <div class="col-span-1 text-center">QTY</div>
+                <div class="col-span-2 text-center">UNIT PRICE</div>
+                <div class="col-span-1 text-center">DISCOUNT</div>
+                <div class="col-span-1 text-center">TAX</div>
+                <div class="col-span-3 text-right">TOTAL</div>
+            </div>
+
+                <!-- Linhas -->
+                <div class="divide-y divide-slate-100">
+                    <div class="grid grid-cols-12 px-8 py-7 items-center">
+                        <div class="col-span-4 font-bold text-slate-800 text-lg">
+                            Website redesign package
+                            <span class="block mt-1 text-sm font-normal text-slate-400">Complete visual refresh and responsive layout updates.</span>
+                        </div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">1</div>
+                        <div class="col-span-2 text-center font-bold text-slate-500">$4,500.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-3 text-right font-bold text-slate-800 text-lg">$4,500.00</div>
+                    </div>
+                    <div class="grid grid-cols-12 px-8 py-7 items-center">
+                        <div class="col-span-4 font-bold text-slate-800 text-lg">
+                            Brand style guide
+                            <span class="block mt-1 text-sm font-normal text-slate-400">Typography, color palette, and logo usage rules.</span>
+                        </div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">1</div>
+                        <div class="col-span-2 text-center font-bold text-slate-500">$1,850.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-3 text-right font-bold text-slate-800 text-lg">$1,850.00</div>
+                    </div>
+                    <div class="grid grid-cols-12 px-8 py-7 items-center">
+                        <div class="col-span-4 font-bold text-slate-800 text-lg">
+                            UI/UX mobile app prototype
+                            <span class="block mt-1 text-sm font-normal text-slate-400">Interactive screens for onboarding and dashboard flows.</span>
+                        </div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">1</div>
+                        <div class="col-span-2 text-center font-bold text-slate-500">$1,200.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-3 text-right font-bold text-slate-800 text-lg">$1,200.00</div>
+                    </div>
+                    <div class="grid grid-cols-12 px-8 py-7 items-center">
+                        <div class="col-span-4 font-bold text-slate-800 text-lg">
+                            SEO setup and optimization
+                            <span class="block mt-1 text-sm font-normal text-slate-400">Metadata, headings, and technical SEO baseline setup.</span>
+                        </div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">1</div>
+                        <div class="col-span-2 text-center font-bold text-slate-500">$650.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-3 text-right font-bold text-slate-800 text-lg">$650.00</div>
+                    </div>
+                    <div class="grid grid-cols-12 px-8 py-7 items-center">
+                        <div class="col-span-4 font-bold text-slate-800 text-lg">
+                            Performance optimization
+                            <span class="block mt-1 text-sm font-normal text-slate-400">Image compression and speed improvements for core pages.</span>
+                        </div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">1</div>
+                        <div class="col-span-2 text-center font-bold text-slate-500">$250.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-1 text-center font-bold text-slate-500">$0.00</div>
+                        <div class="col-span-3 text-right font-bold text-slate-800 text-lg">$250.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumo Final -->
+            <div class="flex flex-col items-end space-y-3 px-8">
+                <div class="w-full max-w-xs flex justify-between text-sm">
+                    <span class="font-bold text-slate-700">SUBTOTAL:</span>
+                    <span class="font-bold text-slate-400">$8,450.00</span>
+                </div>
+                <div class="w-full max-w-xs flex justify-between text-sm">
+                    <span class="font-bold text-slate-700">TOTAL DISCOUNT:</span>
+                    <span class="font-bold text-slate-400">$0.00</span>
+                </div>
+                <div class="w-full max-w-xs flex justify-between text-sm">
+                    <span class="font-bold text-slate-700">TOTAL TAX:</span>
+                    <span class="font-bold text-slate-400">$0.00</span>
+                </div>
+                <div class="w-full max-w-xs flex justify-between items-center pt-4 border-t border-slate-100">
+                    <span class="font-extrabold text-slate-800 text-lg">TOTAL:</span>
+                    <span class="text-4xl font-extrabold text-invoice-blue tracking-tighter">$8,450.00</span>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Terms & Conditions -->
+        <div class="px-10 md:px-20 pb-10">
+            <div class="border border-slate-100 rounded-[2rem] p-8 bg-white shadow-sm">
+                <p class="font-bold text-slate-700 text-sm mb-2">Terms &amp; Conditions:</p>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Fees and payment terms are set in the agreement. Initial deposit required before work begins. Work may be paused for non-payment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="flex justify-between items-end border-t border-slate-100 px-10 md:px-20 pb-10">
+            <div class="text-xs text-slate-400 leading-relaxed">
+                <p class="font-bold text-slate-700 mb-1">CONSTIL Bright Pixel Studio LLC</p>
+                <p>www.constil.com</p>
+                <p>billing@brightpixelstudio.com / +1 (415) 555-0198</p>
+            </div>
+            <div class="flex flex-col items-end">
+                <img
+                    src="../temple1/logo/CONSTIL.svg"
+                    alt="Company logo"
+                    class="h-5 w-auto"
+                />
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

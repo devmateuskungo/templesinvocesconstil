@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; }
+        .bg-custom-blue { background-color: #2983FF; }
+        .text-custom-blue { color: #2983FF; }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <!-- Container Principal (Folha da Fatura) -->
+    <div class="max-w-4xl mx-auto bg-white rounded-[3rem] shadow-2xl p-8 md:p-16 border border-gray-50">
+        
+        <!-- Topo: Logo e Metadados Lado a Lado -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            
+            <!-- Bloco Azul (Logo) -->
+            <div class="md:col-span-2 bg-custom-blue rounded-[2.5rem] p-10 flex flex-col justify-center relative overflow-hidden h-56 shadow-lg shadow-blue-100">
+                <!-- Efeito de gradiente suave no fundo -->
+                <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-4">
+                       
+                        <img
+                            src="./CONSTIL 1.svg"
+                            alt="CONSTIL logo"
+                            class="h-10 w-auto"
+                        />
+                    </div>
+                    <p class="text-white/80 text-sm font-semibold tracking-wide">CONSTIL <span class="mx-1 opacity-40">/</span> 12345 6789 US0001</p>
+                </div>
+            </div>
+
+            <!-- Coluna de Cards da Direita -->
+            <div class="flex flex-col gap-4">
+                <div class="bg-slate-50/80 rounded-3xl p-6 border border-gray-100/50 flex flex-col justify-center h-1/2">
+                    <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1">Invoice number:</p>
+                    <p class="text-xl font-bold text-slate-800">INV-1027</p>
+                </div>
+                <div class="bg-slate-50/80 rounded-3xl p-6 border border-gray-100/50 flex flex-col justify-center h-1/2">
+                    <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1">Issued:</p>
+                    <p class="text-xl font-bold text-slate-800">Mar 19, 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bill From / Bill To (mesma linha em desktop) + Amount due -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-slate-50/50  border border-gray-100/50">
+            <div class=" rounded-[2.5rem] p-10  ">
+                <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-4">Bill From:</p>
+                <p class="text-sm text-slate-800 font-semibold mb-2">Company: CONSTIL Bright Pixel Studio LLC</p>
+                <p class="text-slate-400 text-sm font-medium mb-2">Email: billing@brightpixelstudio.com</p>
+                <p class="text-slate-400 text-sm font-medium mb-2">Phone: +1 (415) 555-0198</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Address: 245 Market St, San Francisco, CA 94105, USA</p>
+            </div>
+            <div class=" rounded-[2.5rem] p-10 ">
+                <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-4">Bill To:</p>
+                <p class="text-sm text-slate-800 font-semibold mb-2">Client: Olivia Thompson</p>
+                <p class="text-slate-400 text-sm font-medium mb-2">Email: olivia.thompson@example.com</p>
+                <p class="text-slate-400 text-sm font-medium mb-2">Phone: +1 (212) 555-0147</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Address: 788 5th Ave, New York, NY 10022, USA</p>
+            </div>
+        </div>
+     
+
+        <!-- Tabela de Itens (Estilo Pill) -->
+        <div class="mb-12">
+            <!-- Header -->
+            <div class="grid grid-cols-12 px-8 mb-6 text-[11px] font-bold text-slate-400 tracking-widest uppercase">
+                <div class="col-span-4">ITEM</div>
+                <div class="col-span-1 text-center">QTY</div>
+                <div class="col-span-2 text-center">UNIT PRICE</div>
+                <div class="col-span-1 text-center">DISCOUNT</div>
+                <div class="col-span-1 text-center">TAX</div>
+                <div class="col-span-3 text-right">TOTAL</div>
+            </div>
+
+            <!-- Lista de Itens -->
+            <div class="space-y-4">
+                <!-- Item Generator (Padrão Repetido) -->
+                <div class="grid grid-cols-12 items-start">
+                    <div class="col-span-4 bg-slate-50 rounded-md py-4 px-6 text-sm">
+                        <p class="font-bold text-slate-700">Website redesign package</p>
+                        <p class="mt-1 text-xs font-normal text-slate-400 leading-relaxed">Complete visual refresh and responsive layout updates.</p>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$4,500.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$4,500.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 items-start">
+                    <div class="col-span-4 bg-slate-50 rounded-md py-4 px-6 text-sm">
+                        <p class="font-bold text-slate-700">Brand style guide</p>
+                        <p class="mt-1 text-xs font-normal text-slate-400 leading-relaxed">Typography, color palette, and logo usage rules.</p>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$1,850.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$1,850.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 items-start">
+                    <div class="col-span-4 bg-slate-50 rounded-md py-4 px-6 text-sm">
+                        <p class="font-bold text-slate-700">UI/UX mobile app prototype</p>
+                        <p class="mt-1 text-xs font-normal text-slate-400 leading-relaxed">Interactive screens for onboarding and dashboard flows.</p>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$1,200.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$1,200.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 items-start">
+                    <div class="col-span-4 bg-slate-50 rounded-md py-4 px-6 text-sm">
+                        <p class="font-bold text-slate-700">SEO setup and optimization</p>
+                        <p class="mt-1 text-xs font-normal text-slate-400 leading-relaxed">Metadata, headings, and technical SEO baseline setup.</p>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$650.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$650.00</div>
+                </div>
+
+                <div class="grid grid-cols-12 items-start">
+                    <div class="col-span-4 bg-slate-50 rounded-md py-4 px-6 text-sm">
+                        <p class="font-bold text-slate-700">Performance optimization</p>
+                        <p class="mt-1 text-xs font-normal text-slate-400 leading-relaxed">Image compression and speed improvements for core pages.</p>
+                    </div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">1</div>
+                    <div class="col-span-2 text-center font-bold text-slate-400 text-sm pt-4">$250.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-1 text-center font-bold text-slate-400 text-sm pt-4">$0.00</div>
+                    <div class="col-span-3 text-right font-bold text-slate-800 text-sm pt-4">$250.00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé: Totais -->
+        <div class="bg-white  p-6 m px-12">
+            <div class="text-right space-y-2">
+                <p class="text-[11px] font-bold text-slate-400 tracking-widest">SUBTOTAL: <span class="text-slate-800">$8,450.00</span></p>
+                <p class="text-[11px] font-bold text-slate-400 tracking-widest">TOTAL DISCOUNT: <span class="text-slate-800">$0.00</span></p>
+                <p class="text-[11px] font-bold text-slate-400 tracking-widest">TOTAL TAX: <span class="text-slate-800">$0.00</span></p>
+                <p class="text-[11px] font-bold text-slate-400 tracking-widest">TOTAL: <span class="text-slate-800">$8,450.00</span></p>
+            </div>
+        </div>
+
+        <!-- Terms & Conditions -->
+        <div class=" p-8 mt-8">
+            <p class="font-bold text-slate-700 text-sm mb-2">Terms &amp; Conditions:</p>
+            <p class="text-xs text-slate-400 leading-relaxed">
+                Fees and payment terms are set in the agreement. Initial deposit required before work begins. Work may be paused for non-payment.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
